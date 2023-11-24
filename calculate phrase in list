@@ -1,0 +1,51 @@
+import array as arr
+import numpy as np
+
+
+txt = "12+5-6-8*5+3-8"
+lst = ["+","*","-","/"]
+lst2 = [" + "," * "," - "," / "]
+#step1
+for i in lst:
+    txt = txt.replace(i , f" {i} " )
+    print(txt)
+#step2
+txt = txt.split(" ")
+
+print(txt , type(txt) ,len(txt) )
+#step3
+
+index = 0 
+num1 =int(txt[index])
+
+
+while index < len(txt)-1:
+
+    operation = txt[index+1]
+    num2 =int(txt[index+2]) 
+
+    print(f"index = {index},", num1 , operation , num2)
+        
+    if operation == '+':
+        output_number = num1 + num2   
+        
+    elif operation == '-':
+        output_number = num1 - num2
+        
+    elif operation == '*':
+        output_number = num1 * num2
+        
+    elif operation == '/':
+        output_number = num1 / num2
+    else :
+        print("finish ")
+        
+
+    num1 = output_number 
+    print(output_number )
+    index+=2
+   
+    
+
+
+
